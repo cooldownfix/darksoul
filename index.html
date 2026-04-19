@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darksoul Ascent – Rise Through Darkness</title>
+    <meta name="description" content="Darksoul Ascent is a brutal 2D action-platformer. Command a spectral wraith through cursed crypts, shattered peaks and ancient horrors. Die. Learn. Ascend.">
+    <meta property="og:title" content="Darksoul Ascent – Rise Through Darkness">
+    <meta property="og:description" content="A brutal 2D action-platformer. Die. Learn. Ascend.">
+    <meta property="og:url" content="https://darksoulascent.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="wallpaper.png">
+    <meta name="theme-color" content="#040608">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;500;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- INTRO -->
+<div id="intro-screen">
+    <div class="intro-bg"></div>
+    <div class="intro-scanlines"></div>
+    <canvas id="intro-canvas"></canvas>
+    <div class="intro-logo-wrap">
+        <div class="intro-border-frame">
+            <h1 class="intro-title">DARKSOUL<br>ASCENT</h1>
+            <p class="intro-sub">Rise Through Darkness</p>
+        </div>
+        <div class="intro-progress-wrap">
+            <div class="intro-bar-track"><div id="intro-bar-fill"></div></div>
+            <span id="intro-bar-text">Awakening the Soul...</span>
+        </div>
+        <button id="intro-skip">SKIP &#9654;</button>
+    </div>
+</div>
+
+<!-- COOKIE -->
+<div id="cookie-banner">
+    <div class="cookie-inner">
+        <span class="cookie-icon">&#9760;</span>
+        <p>This site uses cookies to enhance your experience. By continuing, you accept our <a href="cookie-policy.html">cookie policy</a>.</p>
+        <div class="cookie-btns">
+            <button class="cookie-btn-accept" id="cookie-accept">Accept</button>
+            <button class="cookie-btn-decline" id="cookie-decline">Decline</button>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN SITE -->
+<div id="main-site" style="opacity:0;pointer-events:none;">
+<div id="scroll-progress"></div>
+
+<!-- HEADER -->
+<header id="main-header">
+    <nav>
+        <a class="nav-logo" href="#home">Darksoul Ascent</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#codex">Codex</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="https://example.com/download" class="nav-download" onclick="handleDownload()">Download</a></li>
+        </ul>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-particles" id="hero-particles"></div>
+    <div class="hero-inner container">
+        <div class="hero-text">
+            <div class="hero-badge">&#9760; Free to Play</div>
+            <h2 class="hero-title">Die.<br>Learn.<br>Ascend.</h2>
+            <p class="hero-desc">Command a spectral wraith through cursed crypts, shattered peaks and ancient horrors. Every death sharpens your blade. Rise or be forgotten.</p>
+            <div class="hero-stats">
+                <div class="hstat"><span class="hnum" data-target="18700">0</span><span class="hlab">Downloads</span></div>
+                <div class="hstat-div"></div>
+                <div class="hstat"><span class="hnum" data-target="32">0</span><span class="hlab">Levels</span></div>
+                <div class="hstat-div"></div>
+                <div class="hstat"><span class="hnum" data-target="96">0</span><span class="hlab">% Positive</span></div>
+            </div>
+            <div class="hero-cta-row">
+                <a href="https://example.com/download" class="cta-btn" onclick="handleDownload()">Download Free</a>
+            </div>
+            <p class="hero-note">Windows 10/11 &middot; 1.8 GB &middot; Free</p>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-img-glow"></div>
+            <img src="wallpaper.png" alt="Darksoul Ascent" class="hero-img" loading="eager">
+        </div>
+    </div>
+    <div class="hero-scroll-hint"><span>scroll</span><div class="scroll-arrow-line"></div></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+    <div class="container">
+        <h2 class="section-title reveal">About the Game</h2>
+        <div class="section-underline reveal"></div>
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <p>In the shattered realm of Vaelmoor, the dead do not rest. You are the Darksoul — an ancient wraith stripped of form, bound to wander the ruins of a world that has forgotten your name.</p>
+                <p>To reclaim your essence, you must ascend through the Forgotten Crypt, scale the Splintered Peak, and face the corrupted gods who sealed your fate. Every defeat carves a lesson into your spectral core.</p>
+                <p>Master Spectral Blast, Shadow Dash and Void Angess — abilities drawn from the souls of fallen enemies. Adapt. Evolve. Ascend.</p>
+                <div class="about-tags">
+                    <span class="tag">2D Platformer</span><span class="tag">Action</span><span class="tag">Souls-like</span>
+                    <span class="tag">Single Player</span><span class="tag">Dark Fantasy</span><span class="tag">Pixel Art</span>
+                </div>
+            </div>
+            <div class="about-image-wrap">
+                <img src="gameplay.png" alt="Darksoul Ascent Gameplay" class="about-img" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- CODEX — TABBED CHARACTERS / ENEMIES / BOSSES -->
+<section id="codex" class="codex-section">
+    <div class="container">
+        <h2 class="section-title reveal">Codex</h2>
+        <div class="section-underline reveal"></div>
+        <p class="section-sub reveal">Entries recovered from Vaelmoor's shattered archives.</p>
+
+        <div class="codex-tabs reveal" role="tablist">
+            <button class="ctab active" data-tab="characters" role="tab">&#9760; Characters</button>
+            <button class="ctab" data-tab="enemies" role="tab">&#9812; Enemies</button>
+            <button class="ctab" data-tab="bosses" role="tab">&#9888; Bosses</button>
+        </div>
+
+        <!-- CHARACTERS -->
+        <div class="codex-panel active" id="tab-characters">
+            <div class="codex-grid">
+                <div class="codex-card reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#7dd8f5;">&#128165;</div>
+                        <div class="codex-rarity codex-rarity--legend">Protagonist</div>
+                    </div>
+                    <h3 class="codex-name">The Darksoul</h3>
+                    <p class="codex-role">Spectral Wraith · The Ascendant</p>
+                    <p class="codex-desc">An ancient spirit severed from its mortal shell. Trapped between life and oblivion, it wanders Vaelmoor seeking the essence that was stolen. Absorbs enemy souls to grow stronger with every death.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Mobility</span><div class="cbar"><div style="width:90%"></div></div></div>
+                        <div class="cstat"><span>Power</span><div class="cbar"><div style="width:75%"></div></div></div>
+                        <div class="cstat"><span>Endurance</span><div class="cbar"><div style="width:60%"></div></div></div>
+                    </div>
+                    <div class="codex-abilities"><span>Spectral Blast</span><span>Shadow Dash</span><span>Void Angess</span></div>
+                </div>
+                <div class="codex-card reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#e8a44a;">&#128302;</div>
+                        <div class="codex-rarity codex-rarity--rare">NPC · Guide</div>
+                    </div>
+                    <h3 class="codex-name">The Hollow Oracle</h3>
+                    <p class="codex-role">Ethereal Seer · Keeper of Rites</p>
+                    <p class="codex-desc">A blind prophet fused to a crumbling shrine at the Crypt's threshold. Speaks in riddles. Grants the Darksoul its first ability and hints at the corruption spreading through Vaelmoor's three zones.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Wisdom</span><div class="cbar"><div style="width:95%"></div></div></div>
+                        <div class="cstat"><span>Cryptic</span><div class="cbar"><div style="width:85%"></div></div></div>
+                        <div class="cstat"><span>Combat</span><div class="cbar"><div style="width:5%"></div></div></div>
+                    </div>
+                    <div class="codex-abilities"><span>Foresight</span><span>Soul Reading</span></div>
+                </div>
+                <div class="codex-card reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#d44a4a;">&#128683;</div>
+                        <div class="codex-rarity codex-rarity--uncommon">NPC · Antagonist</div>
+                    </div>
+                    <h3 class="codex-name">Aerveth the Sealed</h3>
+                    <p class="codex-role">Fallen God · The Architect</p>
+                    <p class="codex-desc">The corrupted deity who shattered the Darksoul's form and imprisoned its essence across Vaelmoor's ruins. His presence bleeds through every boss and zone, felt before he's ever faced.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Power</span><div class="cbar"><div style="width:99%"></div></div></div>
+                        <div class="cstat"><span>Corruption</span><div class="cbar"><div style="width:92%"></div></div></div>
+                        <div class="cstat"><span>Mobility</span><div class="cbar"><div style="width:55%"></div></div></div>
+                    </div>
+                    <div class="codex-abilities"><span>Reality Fracture</span><span>Soul Seal</span><span>Veil Collapse</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENEMIES -->
+        <div class="codex-panel" id="tab-enemies">
+            <div class="codex-grid">
+                <div class="codex-card reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#a0b8c0;">&#128128;</div>
+                        <div class="codex-rarity codex-rarity--common">Common · Crypt</div>
+                    </div>
+                    <h3 class="codex-name">Crypt Shambler</h3>
+                    <p class="codex-role">Undead Soldier · Zone 1</p>
+                    <p class="codex-desc">Mindless undead bound to patrol the Forgotten Crypt's lower halls. Slow but relentless. Their decayed armor absorbs one spectral hit before shattering. Bait their lunge to punish the recovery.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Speed</span><div class="cbar"><div style="width:25%"></div></div></div>
+                        <div class="cstat"><span>Aggression</span><div class="cbar"><div style="width:45%"></div></div></div>
+                        <div class="cstat"><span>Durability</span><div class="cbar"><div style="width:55%"></div></div></div>
+                    </div>
+                    <div class="codex-abilities"><span>Lunge</span><span>Armor Break</span></div>
+                </div>
+                <div class="codex-card reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#4ab3d4;">&#127996;</div>
+                        <div class="codex-rarity codex-rarity--uncommon">Uncommon · Zone 1–2</div>
+                    </div>
+                    <h3 class="codex-name">Ghost Archer</h3>
+                    <p class="codex-role">Spectral Ranged · Crypt &amp; Peak</p>
+                    <p class="codex-desc">A fallen soldier whose soul was too vengeful to disperse. Floats at mid-range firing spectral volleys. Cannot be hit while phased — wait for the solid moment between shots to strike.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Speed</span><div class="cbar"><div style="width:50%"></div></div></div>
+                        <div class="cstat"><span>Range</span><div class="cbar"><div style="width:80%"></div></div></div>
+                        <div class="cstat"><span>Durability</span><div class="cbar"><div style="width:30%"></div></div></div>
+                    </div>
+                    <div class="codex-abilities"><span>Phase Shift</span><span>Spectral Volley</span></div>
+                </div>
+                <div class="codex-card reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#b87ab4;">&#9763;</div>
+                        <div class="codex-rarity codex-rarity--rare">Rare · Zone 2–3</div>
+                    </div>
+                    <h3 class="codex-name">Cursed Shade</h3>
+                    <p class="codex-role">Shadow Stalker · Peak &amp; Veil</p>
+                    <p class="codex-desc">A fragment of Aerveth's corruption given form. Mimics the Darksoul's movement with a 0.5s delay. The mirror must be broken — hit it with Void Angess to collapse the copy instantly.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Speed</span><div class="cbar"><div style="width:80%"></div></div></div>
+                        <div class="cstat"><span>Aggression</span><div class="cbar"><div style="width:70%"></div></div></div>
+                        <div class="cstat"><span>Durability</span><div class="cbar"><div style="width:40%"></div></div></div>
+                    </div>
+                    <div class="codex-abilities"><span>Mirror Step</span><span>Void Echo</span><span>Collapse</span></div>
+                </div>
+                <div class="codex-card reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#e8c44a;">&#9876;</div>
+                        <div class="codex-rarity codex-rarity--uncommon">Uncommon · Zone 2</div>
+                    </div>
+                    <h3 class="codex-name">Armored Skeleton</h3>
+                    <p class="codex-role">Heavy Infantry · The Peak</p>
+                    <p class="codex-desc">The reanimated elite guard of the Splintered Peak. Full plate reduces spectral damage by 70%. Must be staggered with Shadow Dash impact before defenses drop. Punish the recovery window hard.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Speed</span><div class="cbar"><div style="width:30%"></div></div></div>
+                        <div class="cstat"><span>Aggression</span><div class="cbar"><div style="width:60%"></div></div></div>
+                        <div class="cstat"><span>Durability</span><div class="cbar"><div style="width:88%"></div></div></div>
+                    </div>
+                    <div class="codex-abilities"><span>Plate Block</span><span>Shield Bash</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOSSES -->
+        <div class="codex-panel" id="tab-bosses">
+            <div class="codex-grid codex-grid--bosses">
+                <div class="codex-card codex-card--boss reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#e8a44a;">&#9879;</div>
+                        <div class="codex-rarity codex-rarity--boss">Zone 1 Boss</div>
+                    </div>
+                    <h3 class="codex-name">The Bone Sovereign</h3>
+                    <p class="codex-role">2-Phase · The Forgotten Crypt</p>
+                    <p class="codex-desc">Once the high priest of Vaelmoor's order, now a colossal skeletal titan fused with the crypt's stone. Phase 1 — patience, read the slam. Phase 2 — the ribcage opens and the soul core becomes vulnerable.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Difficulty</span><div class="cbar boss-bar"><div style="width:55%"></div></div></div>
+                        <div class="cstat"><span>Aggression</span><div class="cbar boss-bar"><div style="width:60%"></div></div></div>
+                        <div class="cstat"><span>HP Pool</span><div class="cbar boss-bar"><div style="width:65%"></div></div></div>
+                    </div>
+                    <div class="boss-weakness"><span class="weakness-label">Weakness:</span><span>Spectral Blast · Core exposure windows</span></div>
+                </div>
+                <div class="codex-card codex-card--boss reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#7dd8f5;">&#9812;</div>
+                        <div class="codex-rarity codex-rarity--boss">Zone 2 Boss</div>
+                    </div>
+                    <h3 class="codex-name">Guard of the Peak</h3>
+                    <p class="codex-role">3-Phase · The Splintered Peak</p>
+                    <p class="codex-desc">A colossal runic golem that has stood sentinel at the Peak for centuries. Each phase strips stone armor to reveal a faster, more enraged core. Phase 3 introduces ground-shattering AOE — stay airborne.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Difficulty</span><div class="cbar boss-bar"><div style="width:75%"></div></div></div>
+                        <div class="cstat"><span>Aggression</span><div class="cbar boss-bar"><div style="width:80%"></div></div></div>
+                        <div class="cstat"><span>HP Pool</span><div class="cbar boss-bar"><div style="width:85%"></div></div></div>
+                    </div>
+                    <div class="boss-weakness"><span class="weakness-label">Weakness:</span><span>Shadow Dash stagger · Rune seams between phases</span></div>
+                </div>
+                <div class="codex-card codex-card--boss reveal">
+                    <div class="codex-card-header">
+                        <div class="codex-icon" style="color:#d44a4a;">&#9760;</div>
+                        <div class="codex-rarity codex-rarity--boss">Zone 3 Boss</div>
+                    </div>
+                    <h3 class="codex-name">The Veil Warden</h3>
+                    <p class="codex-role">4-Phase · The Veil</p>
+                    <p class="codex-desc">A being of collapsed void energy that reshapes the arena at each phase. Environmental hazards are as lethal as its attacks. The hardest fight in the game. Read. Adapt. Survive.</p>
+                    <div class="codex-stats">
+                        <div class="cstat"><span>Difficulty</span><div class="cbar boss-bar"><div style="width:95%"></div></div></div>
+                        <div class="cstat"><span>Aggression</span><div class="cbar boss-bar"><div style="width:92%"></div></div></div>
+                        <div class="cstat"><span>HP Pool</span><div class="cbar boss-bar"><div style="width:98%"></div></div></div>
+                    </div>
+                    <div class="boss-weakness"><span class="weakness-label">Weakness:</span><span>Void Aegis counter · Spectral Blast on phase transitions</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features-section">
+    <div class="container">
+        <h2 class="section-title reveal">Features</h2>
+        <div class="section-underline reveal"></div>
+        <div class="features-grid">
+            <div class="feat-card reveal"><div class="feat-icon">&#9660;</div><h3 class="feat-title">Spectral Combat</h3><p class="feat-desc">Spectral Blast, Shadow Dash, Void Angess — unlocked by absorbing fallen enemies' essence. Chain abilities for devastating combos.</p></div>
+            <div class="feat-card reveal"><div class="feat-icon">&#9812;</div><h3 class="feat-title">Punishing Bosses</h3><p class="feat-desc">Face the Bone Sovereign, Guard of the Peak and the Veil Warden in multi-phase fights designed to test mastery, not patience.</p></div>
+            <div class="feat-card reveal"><div class="feat-icon">&#9888;</div><h3 class="feat-title">Lethal Traps</h3><p class="feat-desc">Navigate cursed mechanisms — void spikes, soul-anchors and collapsing ceilings — each placed with brutal precision.</p></div>
+            <div class="feat-card reveal"><div class="feat-icon">&#127756;</div><h3 class="feat-title">Dark Lore</h3><p class="feat-desc">Uncover Boss Lore tablets scattered across every level, revealing the tragic histories of Vaelmoor's fallen guardians.</p></div>
+            <div class="feat-card reveal"><div class="feat-icon">&#127918;</div><h3 class="feat-title">Controller Support</h3><p class="feat-desc">Full Xbox and PlayStation layout support with haptic feedback. Keyboard and mouse fully supported with remappable binds.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+        <h2 class="section-title reveal">Gallery</h2>
+        <div class="section-underline reveal"></div>
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item--top reveal" onclick="openLightbox('screenshot1.png','The Forgotten Crypt')">
+                <img src="screenshot1.png" alt="The Forgotten Crypt" class="gallery-img" loading="lazy">
+                <div class="gallery-overlay"><span>The Forgotten Crypt</span></div>
+            </div>
+            <div class="gallery-item gallery-item--top reveal" onclick="openLightbox('screenshot2.png','The Splintered Peak')">
+                <img src="screenshot2.png" alt="The Splintered Peak" class="gallery-img" loading="lazy">
+                <div class="gallery-overlay"><span>The Splintered Peak</span></div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('screenshot3.png','The Forsaken Castle')">
+                <img src="screenshot3.png" alt="The Forsaken Castle" class="gallery-img" loading="lazy">
+                <div class="gallery-overlay"><span>The Forsaken Castle</span></div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('screenshot4.png','Boss – Guard of the Peak')">
+                <img src="screenshot4.png" alt="Boss" class="gallery-img" loading="lazy">
+                <div class="gallery-overlay"><span>Boss &#8212; Guard of the Peak</span></div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('gameplay.png','Spectral Combat')">
+                <img src="gameplay.png" alt="Spectral Combat" class="gallery-img" loading="lazy">
+                <div class="gallery-overlay"><span>Spectral Combat</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lb-close" id="lb-close" aria-label="Close">&#215;</button>
+    <img id="lb-img" src="" alt="">
+    <div id="lb-caption"></div>
+</div>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews-section">
+    <div class="container">
+        <h2 class="section-title reveal">Player Reviews</h2>
+        <div class="section-underline reveal"></div>
+        <div class="reviews-summary reveal">
+            <div class="score-box">
+                <div class="score-num">4.9</div>
+                <div class="score-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="score-count">Based on 189 reviews</div>
+            </div>
+            <div class="score-bars">
+                <div class="bar-row"><span>5&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div><span>82%</span></div>
+                <div class="bar-row"><span>4&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:12%"></div></div><span>12%</span></div>
+                <div class="bar-row"><span>3&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div><span>4%</span></div>
+                <div class="bar-row"><span>2&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><span>1%</span></div>
+                <div class="bar-row"><span>1&#9733;</span><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><span>1%</span></div>
+            </div>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card reveal"><div class="review-top"><div class="reviewer-avatar" style="background:#4ab3d4;">K</div><div class="reviewer-info"><div class="reviewer-name">KaelVoidwalker</div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><span class="review-date">April 2026</span></div><p class="review-body">"This is the souls-like I didn't know I needed on PC. The spectral movement system is buttery smooth and the boss designs are genuinely creative. Shadow Dash saved my life more times than I can count."</p><div class="review-helpful">&#128077; 61 found this helpful</div></div>
+            <div class="review-card reveal"><div class="review-top"><div class="reviewer-avatar" style="background:#7e4ab3;">V</div><div class="reviewer-info"><div class="reviewer-name">VeiledArrow</div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><span class="review-date">March 2026</span></div><p class="review-body">"The atmosphere is unmatched for a free game. Torchlit corridors, ominous Boss Lore tablets, crumbling gothic architecture — it genuinely feels like a premium release. Completed it three times already."</p><div class="review-helpful">&#128077; 48 found this helpful</div></div>
+            <div class="review-card reveal"><div class="review-top"><div class="reviewer-avatar" style="background:#b34a4a;">R</div><div class="reviewer-info"><div class="reviewer-name">RetroSoulFan</div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><span class="review-date">March 2026</span></div><p class="review-body">"I went in expecting another mediocre indie and came out 8 hours later completely wrecked by the Guard of the Peak fight. Insane enemy design. The pixel art is stunning — every sprite feels hand-crafted."</p><div class="review-helpful">&#128077; 39 found this helpful</div></div>
+            <div class="review-card reveal"><div class="review-top"><div class="reviewer-avatar" style="background:#4ab37a;">S</div><div class="reviewer-info"><div class="reviewer-name">SilentWraith99</div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div></div><span class="review-date">Feb 2026</span></div><p class="review-body">"Brilliant game. Controls feel tight, deaths feel fair. The Void Angess ability is absolute chaos in a good way. Taking off one star only because I want more levels — the existing content is too short for how good it is."</p><div class="review-helpful">&#128077; 27 found this helpful</div></div>
+            <div class="review-card reveal"><div class="review-top"><div class="reviewer-avatar" style="background:#b38a4a;">D</div><div class="reviewer-info"><div class="reviewer-name">DarkPixelDev</div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><span class="review-date">Feb 2026</span></div><p class="review-body">"As a developer I'm genuinely impressed by the hitbox accuracy and input handling. Zero input lag, responsive controls, and the sound design during the Bone Sovereign fight gave me goosebumps. Exceptional work for free."</p><div class="review-helpful">&#128077; 33 found this helpful</div></div>
+            <div class="review-card reveal"><div class="review-top"><div class="reviewer-avatar" style="background:#4a6ab3;">M</div><div class="reviewer-info"><div class="reviewer-name">MidnightCrypt_</div><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div></div><span class="review-date">Jan 2026</span></div><p class="review-body">"Downloaded on a whim, stayed for 12 hours. The mini-map is gorgeous, the lore tablets are actually worth reading, and the enemy variety between the Crypt and the Peak is impressive. One of the best free games I've played in years."</p><div class="review-helpful">&#128077; 44 found this helpful</div></div>
+        </div>
+        <div class="write-review reveal">
+            <h3>Write a Review</h3>
+            <div class="write-review-box">
+                <div class="star-selector" id="star-selector" role="group" aria-label="Rating">
+                    <span class="star-opt" data-val="1" role="button" tabindex="0">&#9733;</span>
+                    <span class="star-opt" data-val="2" role="button" tabindex="0">&#9733;</span>
+                    <span class="star-opt" data-val="3" role="button" tabindex="0">&#9733;</span>
+                    <span class="star-opt" data-val="4" role="button" tabindex="0">&#9733;</span>
+                    <span class="star-opt" data-val="5" role="button" tabindex="0">&#9733;</span>
+                </div>
+                <input type="text" id="review-name" placeholder="Your name or username" maxlength="30" autocomplete="off">
+                <textarea id="review-textarea" rows="4" placeholder="Share your experience with Darksoul Ascent..." maxlength="300"></textarea>
+                <button id="submit-review">Submit Review</button>
+            </div>
+            <p id="review-success" style="display:none;">&#10003; Thank you for your review!</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ROADMAP -->
+<section id="roadmap" class="roadmap-section">
+    <div class="container">
+        <h2 class="section-title reveal">Roadmap</h2>
+        <div class="section-underline reveal"></div>
+        <p class="section-sub reveal">What comes next for Vaelmoor.</p>
+        <div class="roadmap-track">
+            <div class="roadmap-line"></div>
+            <div class="rm-item rm-done reveal">
+                <div class="rm-dot"></div>
+                <div class="rm-card">
+                    <div class="rm-tag rm-tag--done">Released</div>
+                    <div class="rm-version">v1.0 – v1.4</div>
+                    <div class="rm-title">Foundation &amp; The Veil</div>
+                    <p>The Forgotten Crypt, Splintered Peak, The Veil. 32 levels, 3 bosses, full ability system.</p>
+                </div>
+            </div>
+            <div class="rm-item rm-active reveal">
+                <div class="rm-dot rm-dot--active"></div>
+                <div class="rm-card rm-card--active">
+                    <div class="rm-tag rm-tag--active">In Development</div>
+                    <div class="rm-version">v1.5 — Q3 2026</div>
+                    <div class="rm-title">The Ashen Spire</div>
+                    <p>Volcanic-themed zone, 12 new levels, new faction: Ashen Sentinels. New boss: The Cinder Sovereign.</p>
+                </div>
+            </div>
+            <div class="rm-item reveal">
+                <div class="rm-dot rm-dot--future"></div>
+                <div class="rm-card rm-card--future">
+                    <div class="rm-tag rm-tag--future">Planned · Q4 2026</div>
+                    <div class="rm-version">v2.0 — The Final Ascent</div>
+                    <div class="rm-title">Confrontation with Aerveth</div>
+                    <p>Face Aerveth the Sealed in a multi-stage climax that reshapes the entire map. New Game+ unlocked on completion.</p>
+                </div>
+            </div>
+            <div class="rm-item reveal">
+                <div class="rm-dot rm-dot--future"></div>
+                <div class="rm-card rm-card--future">
+                    <div class="rm-tag rm-tag--future">Planned · 2027</div>
+                    <div class="rm-version">v2.1+ — Community</div>
+                    <div class="rm-title">Level Editor &amp; Co-op</div>
+                    <p>Community level editor with Steam Workshop. Experimental 2-player co-op mode and challenge modes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CHANGELOG -->
+<section id="changelog" class="changelog-section">
+    <div class="container">
+        <h2 class="section-title reveal">Update History</h2>
+        <div class="section-underline reveal"></div>
+        <div class="changelog-list">
+            <div class="cl-entry latest reveal"><div class="cl-badge">Latest</div><div class="cl-version">v1.4.0</div><div class="cl-date">April 5, 2026</div><div class="cl-title">The Veil Update</div><ul class="cl-items"><li>New zone: The Veil — 10 additional chambers beyond the Peak</li><li>New boss: The Veil Warden — 4-phase fight with environmental hazards</li><li>New ability: Void Aegis — temporary spectral shield</li><li>Extended soundtrack — 5 new original tracks by Aeris Kova</li><li>Performance overhaul — 60 fps stable on low-end GPUs</li></ul></div>
+            <div class="cl-entry reveal"><div class="cl-version">v1.3.1</div><div class="cl-date">March 14, 2026</div><div class="cl-title">Stability Patch</div><ul class="cl-items"><li>Fixed save corruption issue on Windows 11 24H2</li><li>Fixed audio clipping on Bone Sovereign death animation</li><li>Corrected hitbox on Level 14 void spike trap</li></ul></div>
+            <div class="cl-entry reveal"><div class="cl-version">v1.3.0</div><div class="cl-date">February 22, 2026</div><div class="cl-title">The Shattered Peak Update</div><ul class="cl-items"><li>New zone: The Splintered Peak — 12 chambers</li><li>New boss: Guard of the Peak (3-phase golem)</li><li>Boss Lore tablet system — 8 collectible tablets</li><li>Added controller support (Xbox &amp; PlayStation)</li></ul></div>
+            <div class="cl-entry reveal"><div class="cl-version">v1.0.0</div><div class="cl-date">December 15, 2025</div><div class="cl-title">Initial Release</div><ul class="cl-items"><li>The Forgotten Crypt — 20 levels</li><li>Boss: The Bone Sovereign (2-phase)</li><li>Spectral Blast ability &amp; original soundtrack</li></ul></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <h2 class="section-title reveal">FAQ</h2>
+        <div class="section-underline reveal"></div>
+        <div class="faq-list">
+            <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Is Darksoul Ascent really free? <span class="faq-arrow">&#8595;</span></button><div class="faq-a"><p>Yes — completely free, no microtransactions, no paywalled content. All updates are and will remain free.</p></div></div>
+            <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">How difficult is the game? <span class="faq-arrow">&#8595;</span></button><div class="faq-a"><p>Darksoul Ascent is intentionally challenging in the souls-like tradition. Deaths are expected — each one teaches you something. There is no difficulty slider. The game is hard, fair, and rewarding.</p></div></div>
+            <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Does it support controllers? <span class="faq-arrow">&#8595;</span></button><div class="faq-a"><p>Full Xbox and PlayStation controller support with haptic feedback on v1.3+. Keyboard and mouse are fully supported with remappable bindings.</p></div></div>
+            <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Will there be a Mac or Linux version? <span class="faq-arrow">&#8595;</span></button><div class="faq-a"><p>Currently Windows-only. Linux support via Proton works well for most players. Mac support is on the roadmap but has no confirmed timeline yet.</p></div></div>
+            <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">How long is the game? <span class="faq-arrow">&#8595;</span></button><div class="faq-a"><p>First playthrough averages 6–10 hours. Completionists hunting all lore tablets and secrets can expect 14–18 hours. New Game+ adds significant replay value.</p></div></div>
+            <div class="faq-item reveal"><button class="faq-q" aria-expanded="false">Is there a save system? <span class="faq-arrow">&#8595;</span></button><div class="faq-a"><p>Yes. Checkpoints are placed throughout each zone and progress is saved automatically. You can have one active save slot per profile.</p></div></div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- DOWNLOAD NOTIFICATION -->
+<div id="dl-notification">
+    <div class="dl-notif-inner">
+        <div class="dl-notif-icon">&#11015;&#65039;</div>
+        <div class="dl-notif-text">
+            <strong>Download Started!</strong>
+            <span>Darksoul Ascent is downloading. Check your downloads folder.</span>
+        </div>
+        <button class="dl-notif-close" onclick="document.getElementById('dl-notification').classList.remove('show')" aria-label="Close">&#215;</button>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <span>Darksoul Ascent</span>
+            <p>&copy; 2026 Darksoul Ascent Team. All rights reserved.</p>
+        </div>
+        <div class="footer-socials">
+            <a href="#" class="social-link">Discord</a>
+            <a href="#" class="social-link">Twitter/X</a>
+            <a href="#" class="social-link">YouTube</a>
+            <a href="#" class="social-link">Reddit</a>
+        </div>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms-of-service.html">Terms</a>
+            <a href="license-agreement.html">License</a>
+            <a href="cookie-policy.html">Cookies</a>
+        </div>
+    </div>
+</footer>
+
+</div>
+<button id="scroll-top" aria-label="Scroll to top">&#8679;</button>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – Darksoul Ascent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-page { min-height: 80vh; padding: 9rem 5% 5rem; }
+        .legal-box { max-width: 820px; margin: 0 auto; background: var(--c-card); border: 1px solid var(--c-border); padding: 3rem; }
+        .legal-box h1 { font-family:'Cinzel Decorative',serif; font-size:1.8rem; color:#fff; margin-bottom:.5rem; }
+        .legal-date { font-size:.78rem; color:var(--c-dimmer); margin-bottom:2.5rem; padding-bottom:1rem; border-bottom:1px solid var(--c-border); }
+        .legal-box h2 { font-family:'Cinzel',serif; font-size:1.1rem; color:var(--c-blue-bright); margin:2rem 0 .7rem; letter-spacing:.06em; }
+        .legal-box p { font-size:.9rem; color:var(--c-dim); line-height:1.85; margin-bottom:.9rem; font-weight:300; }
+        .back-link { display:inline-flex; align-items:center; gap:.5rem; margin-bottom:2rem; font-family:'Cinzel',serif; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--c-dim); text-decoration:none; transition:color .25s; }
+        .back-link:hover { color:var(--c-blue); }
+    </style>
+</head>
+<body>
+<div id="main-site" style="opacity:1;pointer-events:auto;">
+<header id="main-header" class="scrolled">
+    <nav>
+        <a class="nav-logo" href="index.html">Darksoul Ascent</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="index.html#changelog">Updates</a></li>
+            <li><a href="https://example.com/download" class="nav-download">Download</a></li>
+        </ul>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+</header>
+<main>
+<section class="legal-page">
+    <div class="container">
+        <div class="legal-box">
+            <a href="index.html" class="back-link">&#8592; Back to Site</a>
+            <h1>Privacy Policy</h1>
+            <p class="legal-date">Last updated: April 18, 2026</p>
+            <h2>1. Introduction</h2>
+            <p>Welcome to Darksoul Ascent. This Privacy Policy explains how we collect, use, and protect your information when you visit our website at darksoulascent.com.</p>
+            <h2>2. Information We Collect</h2>
+            <p>We collect only anonymised analytics data (page views, country of origin, device type) through Cloudflare's built-in analytics. We do not use Google Analytics or any third-party tracking scripts. We do not collect names, email addresses or personal identifiers unless you voluntarily submit a review on this page.</p>
+            <h2>3. Cookies</h2>
+            <p>We use a single first-party cookie to remember your cookie consent preference. We do not use advertising cookies, tracking pixels or cross-site identifiers.</p>
+            <h2>4. Data Sharing</h2>
+            <p>We do not sell, trade or otherwise transfer your personal information to third parties. Cloudflare acts as our infrastructure and DNS provider; their privacy policy applies to network-level data.</p>
+            <h2>5. Data Retention</h2>
+            <p>Consent preferences stored in localStorage are retained on your device until you clear your browser data. No personal data is stored on our servers.</p>
+            <h2>6. Your Rights</h2>
+            <p>You have the right to request deletion of any data associated with you. As we do not store personally identifiable information, there is typically nothing to delete. Contact us at <span style="font-family:monospace;color:var(--c-blue);">privacy@darksoulascent.com</span> with any requests.</p>
+            <h2>7. Changes</h2>
+            <p>We may update this policy occasionally. Changes will be posted on this page with an updated date.</p>
+            <h2>8. Contact</h2>
+            <p>Questions? Email us at <span style="font-family:monospace;color:var(--c-blue);">privacy@darksoulascent.com</span></p>
+        </div>
+    </div>
+</section>
+</main>
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo"><span>Darksoul Ascent</span><p>&copy; 2026 Darksoul Ascent Team. All rights reserved.</p></div>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms-of-service.html">Terms</a>
+            <a href="license-agreement.html">License</a>
+            <a href="cookie-policy.html">Cookies</a>
+        </div>
+    </div>
+</footer>
+</div>
+<script>document.getElementById('burger').addEventListener('click',function(){this.classList.toggle('open');document.getElementById('nav-links').classList.toggle('open');});</script>
+</body>
+</html>
